@@ -1,0 +1,15 @@
+{
+    "rows": [{
+        "account": "bugg4.wam",
+        "energy": 600,
+        "max_energy": 900,
+        "last_mine_tx": "0000000000000000000000000000000000000000000000000000000000000000",
+        "balances": [
+            "216.4728 FOOD",
+            "75.1986 GOLD",
+            "33.8340 WOOD"
+        ]
+    }],
+    "more": false,
+    "next_key": ""
+}
