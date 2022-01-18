@@ -1,259 +1,1408 @@
-<div class="container">
-   <div class="col-xl-12">
-      <div class="card sub-menu">
-         <div class="card-body active">
-            <ul class="d-flex show">
-               <li class="nav-item active"><a href="#" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><i class="mdi mdi-bullseye"></i><span id="USD_price">0</span></a></li>
-               <li class="nav-item"><a href="#" class="nav-link"><i class="mdi mdi-heart"></i><span task="FWW_price">0</span></a></li>
+<body class="animsition site-navbar-small dashboard">
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-               <li class="nav-item"><a href="#" class="nav-link"><i class="mdi mdi-pentagon"></i><span task="FWG_price">0</span></a></li>
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
-               <li class="nav-item"><a href="#" class="nav-link"><i class="mdi mdi-database"></i><span task="FWF_price">0</span></a></li>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+            </button>
+            <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+                <img class="navbar-brand-logo" src="/style/assets/images/logo.png" title="Remark">
+                <span class="navbar-brand-text hidden-xs-down"> Remark</span>
+            </div>
+            <button type="button" class="navbar-toggler collapsed" data-target="#site-navbar-search" data-toggle="collapse">
+                <span class="sr-only">Toggle Search</span>
+                <i class="icon wb-search" aria-hidden="true"></i>
+            </button>
+        </div>
 
-            </ul>
-            <input hidden id="FWF_price_value" value="0">
-            <input hidden id="FWW_price_value" value="0">
-            <input hidden id="FWG_price_value" value="0">
-         </div>
-      </div>
-   </div>
-   <div class="row"">
-   <div class=" col-xl-12">
-      <div class="card sub-menu">
-         <div class="card-body active" style="background:antiquewhite">
-            ACCOUNTS
-         </div>
-      </div>
-   </div>
-</div>
-<div class="row" id="row_acc">
-   <div class="col-xl-4 col-lg-5 col-md-5">
-      <div class="card profile_card  new_card">
-         <div class="card-header">
-            <div class="media-body">
-               <p style="margin-bottom: 0px;" class="btn btn-success">Account name</p>
-               <span class="badge darken-3 md">Balance:<span>1000</span></span>
-               <span class="badge darken-3 md">Staking:<span>1000</span></span>
-               <p class="mb-0">CPU : 28%</p>
+        <div class="navbar-container container-fluid">
+            <!-- Navbar Collapse -->
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                <!-- Navbar Toolbar -->
+                <ul class="nav navbar-toolbar">
+                    <li class="nav-item hidden-float" id="toggleMenubar">
+                        <a class="nav-link" data-toggle="menubar" href="#" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">Toggle menubar</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="nav-item hidden-sm-down" id="toggleFullscreen">
+                        <a class="nav-link icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                            <span class="sr-only">Toggle fullscreen</span>
+                        </a>
+                    </li>
+                    <li class="nav-item hidden-float">
+                        <a class="nav-link icon wb-search" data-toggle="collapse" href="#" data-target="#site-navbar-search" role="button">
+                            <span class="sr-only">Toggle Search</span>
+                        </a>
+                    </li>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item" role="presentation"><a class="active nav-link" href="javascript:void(0)"><img class="mr-1" src="/style/img/usd.png" style="height: 18px;"><span task="USD_price">0</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="active nav-link" href="javascript:void(0)"><img class="mr-1" src="/style/img/wax.png" style="height: 18px;"><span task="WAX_price">0</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="active nav-link" href="javascript:void(0)"><img class="mr-1" src="/style/img/FWW.png" style="height: 18px;"><span task="FWW_price">0</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="javascript:void(0)"><img class="mr-1" src="/style/img/FWG.png" style="height: 18px;"> <span task="FWG_price">0</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="active nav-link" href="javascript:void(0)"><img class="mr-1" src="/style/img/FWF.png" style="height: 18px;"> <span task="FWF_price">0</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="active nav-link" href="javascript:void(0)"><img class="mr-1" src="/style/img/FWF.png" style="height: 18px;"> <span task="FEE_price">0</span></a></li>
+                        <li class="nav-item" role="presentation"><a class="active nav-link" href="javascript:void(0)"><img class="mr-1" src="/style/img/FWF.png" style="height: 18px;"> <span task="FARM_price">0</span></a></li>
+                    </ul>
+                    <input hidden id="FWF_price_value" value="0">
+                    <input hidden id="FWW_price_value" value="0">
+                    <input hidden id="FWG_price_value" value="0">
+                    <input hidden id="USD_price_value" value="0">
+                    <input hidden id="WAX_price_value" value="0">
+                    <input hidden id="FARM_price_value" value="0">
+                </ul>
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" data-animation="scale-up" aria-expanded="false" role="button">
+                            <span class="flag-icon flag-icon-us"></span>
+                        </a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                <span class="flag-icon flag-icon-gb"></span> English</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                <span class="flag-icon flag-icon-fr"></span> French</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                <span class="flag-icon flag-icon-cn"></span> Chinese</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                <span class="flag-icon flag-icon-de"></span> German</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem">
+                                <span class="flag-icon flag-icon-nl"></span> Dutch</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false" data-animation="scale-up" role="button">
+                            <span class="avatar avatar-online">
+                                <img src="/style/portraits/5.jpg" alt="...">
+                                <i></i>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-payment" aria-hidden="true"></i> Billing</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Settings</a>
+                            <div class="dropdown-divider" role="presentation"></div>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-power" aria-hidden="true"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- End Navbar Toolbar Right -->
             </div>
-         </div>
-         <div class="card-body">
-            <div class="media">
-               <div class="media-body" task="account">
-                  <div class="row">
-                     <div class="col-6 ntf ">ACCOUNT</div>
-                     <div class="col-6 ntf">Energy: <span class="badge bg-danger p-2" style="padding: 5px !important;">20/300</span></div>
-                  </div>
-                  <div class="row">
-                     <div class="col-4 ntf">Token:</div>
-                     <div class="col-4 ntf right">Ingame:</div>
-                     <div class="col-4 ntf right">Daily Cost/Mine:</div>
-                  </div>
-                  <div class="row">
-                     <div class="col-6 ntf">ROI:30 day</div>
-                     <div class="col-3 ntf center">
-                        <p class="mb-1"><span><i class="fa fa-phone me-2 text-primary"></i></span>192000</p>
-                     </div>
-                     <div class="col-3 ntf right">2914 ￦</div>
-                  </div>
-               </div>
-            </div>
-            <div class="media">
-               <div class="media-body" id="">
-                  <div class="row">
-                     <div class="col-6 ntf ">MINING</div>
-                     <div class="col-6 ntf">Daily Profit: <span class="badge bg-danger p-2" style="padding: 5px !important;">1118 W</span></div>
-                  </div>
-                  <div class="row">
-                     <div class="col-4 ntf">CHAINSAW</div>
-                     <div class="col-3 ntf">00:14:39</div>
-                     <div class="col-3 ntf right">720 / 900</div>
-                     <div class="col-2 ntf right">166 ￦</div>
-                  </div>
-               </div>
-            </div>
-            <div class="media">
-               <div class="media-body" task="mining">
-                  <div class="row">
-                     <div class="col-6 ntf ">Raising COW</div>
-                     <div class="col-6 ntf">Daily Cost: <span class="badge bg-danger p-2" style="padding: 5px !important;">1118 W</span></div>
-                  </div>
-                  <div class="row">
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="media">
-               <div class="media-body" task="mining">
-                  <div class="row">
-                     <div class="col-6 ntf ">CROPS</div>
-                     <div class="col-6 ntf">Daily Cost: <span class="badge bg-danger p-2" style="padding: 5px !important;">1118 W</span></div>
-                  </div>
-                  <div class="row">
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                     <div class="col-6 ntf">
-                        <p>Cow<span>(0/6) 01:01:01</span></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!--  -->
-<div class="row" id="row_toos">
-   <div class="col-xl-12">
-      <div class="card sub-menu">
-         <div class="card-body active" style="background:antiquewhite">
-            TOOLS
-         </div>
-      </div>
-   </div>
-   <div class="col-xl-4 col-lg-5 col-md-5">
-      <div class="card profile_card">
-         <div class="card-header">
-            <div class="ntf-header media align-items-center mb-3"><img src="/style/img/2.9268586d.png" width="55" height="55" alt="" class="me-3 rounded-circle me-0 me-sm-3">
-               <div class="media-body">
-                  <span task="FWF_price" class="badge darken-3 md">0
-                     <!-- <span class="badge ssm green lighten-1">7.8%</span> -->
-                  </span>
-                  <span class="badge darken-3 md">￦
-                     <!-- <span class="badge ssm green lighten-1">7.8%</span> -->
-                  </span>
-                  <span task="FWF_price_percent" class="badge bg-danger">0%
-                  </span>
-               </div>
-            </div>
-         </div>
-         <div class="card-body" id="food_templates">
-            <div class="media">
-               <img src="/style/img/2.9268586d.png" width="60" height="60" alt="" class="me-3 rounded-circle me-0 me-sm-3">
-               <div class="media-body">
-                  <div class="row">
-                     <div class="col-6 ntf">Daily</div>
-                     <div class="col-6 ntf right">379 ￦</div>
-                  </div>
-                  <div class="row">
-                     <div class="col-6 ntf">ROI</div>
-                     <div class="col-6 ntf right">379 ￦</div>
-                  </div>
-                  <div class="row">
-                     <div class="col-4">
-                           <div class="col">
-                              <div class="row">
-                                 <div class="col-6 ntf">Buy AH</div>
-                                 <div class="col-6 ntf">18 ￦</div>
-                              </div>
-                              <div class="row">
-                                 <div class="col-6 ntf">Sell AH</div>
-                                 <div class="col-6 ntf">18 ￦</div>
-                              </div>
-                           </div>
-                     </div>
-                     <div class="col-4">
-                           <div class="col">
-                              <div class="row">
-                                 <div class="col-6 ntf">Buy DC</div>
-                                 <div class="col-6 ntf">18 ￦</div>
-                              </div>
-                              <div class="row">
-                                 <div class="col-6 ntf">Sell DC</div>
-                                 <div class="col-6 ntf">18 ￦</div>
-                              </div>
-                           </div>
-                     </div>
-                     <div class="col-4">
-                           <div class="col">
-                              <div class="row">
-                                 <div class="col-6 ntf">Buy Craft</div>
-                                 <div class="col-6 ntf">18 ￦</div>
-                              </div>
-                              <div class="row">
-                                 <div class="col-6 ntf">Sell Craft</div>
-                                 <div class="col-6 ntf">18 ￦</div>
-                              </div>
-                           </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   
-   <div class="col-xl-4 col-lg-5 col-md-5">
-      <div class="card profile_card">
-         <div class="card-header">
-            <div class="ntf-header media align-items-center mb-3"><img src="/style/img/2.9268586d.png" width="55" height="55" alt="" class="me-3 rounded-circle me-0 me-sm-3">
-               <div class="media-body">
-                  <span task="FWW_price" class="badge darken-3 md">0
-                     <!-- <span class="badge ssm green lighten-1">7.8%</span> -->
-                  </span>
-                  <span class="badge darken-3 md">￦
-                     <!-- <span class="badge ssm green lighten-1">7.8%</span> -->
-                  </span>
-                  
-                  <span task="FWW_price_percent" class="badge bg-danger">0%
-                  </span>
-               </div>
-            </div>
-         </div>
-         <div class="card-body" id="wood_templates">
-         </div>
-      </div>
-   </div>
-   
-   <div class="col-xl-4 col-lg-5 col-md-5">
-      <div class="card profile_card">
-         <div class="card-header">
-            <div class="ntf-header media align-items-center mb-3"><img src="/style/img/2.9268586d.png" width="55" height="55" alt="" class="me-3 rounded-circle me-0 me-sm-3">
-               <div class="media-body">
-                  <span task="FWG_price" class="badge darken-3 md">0
-                     <!-- <span class="badge ssm green lighten-1">7.8%</span> -->
-                  </span>
-                  <span class="badge darken-3 md">￦
-                  </span>
-                  <span task="FWG_price_percent" class="badge bg-danger">0%
-                  </span>
-               </div>
-            </div>
-         </div>
-         <div class="card-body" id="gold_templates">
-         </div>
-      </div>
-   </div>
-</div>
+            <!-- End Navbar Collapse -->
 
-</div>
+            <!-- Site Navbar Seach -->
+            <div class="collapse navbar-search-overlap" id="site-navbar-search">
+                <form role="search">
+                    <div class="form-group">
+                        <div class="input-search">
+                            <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                            <input type="text" class="form-control" name="site-search" placeholder="Search...">
+                            <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search" data-toggle="collapse" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- End Site Navbar Seach -->
+        </div>
+    </nav>
+    <div class="site-menubar">
+        <ul class="site-menu">
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                    <span class="site-menu-title">Dashboard</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item active">
+                        <a href="index.html">
+                            <span class="site-menu-title">Dashboard v1</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="dashboard/v2.html">
+                            <span class="site-menu-title">Dashboard v2</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="dashboard/ecommerce.html">
+                            <span class="site-menu-title">Ecommerce</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="dashboard/analytics.html">
+                            <span class="site-menu-title">Analytics</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="dashboard/team.html">
+                            <span class="site-menu-title">Team</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                    <span class="site-menu-title">Layouts</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a href="layouts/menu-collapsed.html">
+                            <span class="site-menu-title">Menu Collapsed</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/menu-expended.html">
+                            <span class="site-menu-title">Menu Expended</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/grids.html">
+                            <span class="site-menu-title">Grid Scaffolding</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/layout-grid.html">
+                            <span class="site-menu-title">Layout Grid</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/headers.html">
+                            <span class="site-menu-title">Different Headers</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/panel-transition.html">
+                            <span class="site-menu-title">Panel Transition</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/boxed.html">
+                            <span class="site-menu-title">Boxed Layout</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/two-columns.html">
+                            <span class="site-menu-title">Two Columns</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="layouts/bordered-header.html">
+                            <span class="site-menu-title">Bordered Header</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Page Aside</span>
+                            <div class="site-menu-label">
+                                <span class="badge badge-danger badge-round mr-25">new</span>
+                            </div>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item">
+                                <a href="layouts/aside-left-static.html">
+                                    <span class="site-menu-title">Left Static</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="layouts/aside-right-static.html">
+                                    <span class="site-menu-title">Right Static</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="layouts/aside-left-fixed.html">
+                                    <span class="site-menu-title">Left Fixed</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="layouts/aside-right-fixed.html">
+                                    <span class="site-menu-title">Right Fixed</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-file" aria-hidden="true"></i>
+                    <span class="site-menu-title">Pages</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Errors</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item">
+                                <a href="pages/error-400.html">
+                                    <span class="site-menu-title">400 Bad Request</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/error-403.html">
+                                    <span class="site-menu-title">403 Forbidden</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/error-404.html">
+                                    <span class="site-menu-title">404 Not Found</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/error-500.html">
+                                    <span class="site-menu-title">500 Internal Server Error</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/error-503.html">
+                                    <span class="site-menu-title">503 Service Unavailable</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/faq.html">
+                            <span class="site-menu-title">FAQ</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/gallery.html">
+                            <span class="site-menu-title">Gallery</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/gallery-grid.html">
+                            <span class="site-menu-title">Gallery Grid</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/search-result.html">
+                            <span class="site-menu-title">Search Result</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Maps</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item">
+                                <a href="pages/map-google.html">
+                                    <span class="site-menu-title">Google Maps</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/map-vector.html">
+                                    <span class="site-menu-title">Vector Maps</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/maintenance.html">
+                            <span class="site-menu-title">Maintenance</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/forgot-password.html">
+                            <span class="site-menu-title">Forgot Password</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/lockscreen.html">
+                            <span class="site-menu-title">Lockscreen</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/login.html">
+                            <span class="site-menu-title">Login</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/register.html">
+                            <span class="site-menu-title">Register</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/login-v2.html">
+                            <span class="site-menu-title">Login V2</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/register-v2.html">
+                            <span class="site-menu-title">Register V2</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/login-v3.html">
+                            <span class="site-menu-title">Login V3</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/register-v3.html">
+                            <span class="site-menu-title">Register V3</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/user.html">
+                            <span class="site-menu-title">User List</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/invoice.html">
+                            <span class="site-menu-title">Invoice</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/blank.html">
+                            <span class="site-menu-title">Blank Page</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Email</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item">
+                                <a href="pages/email-articles.html">
+                                    <span class="site-menu-title">Articles</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/email-welcome.html">
+                                    <span class="site-menu-title">Welcome</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/email-post.html">
+                                    <span class="site-menu-title">Post</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/email-thumbnail.html">
+                                    <span class="site-menu-title">Thumbnail</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="pages/email-news.html">
+                                    <span class="site-menu-title">News</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/code-editor.html">
+                            <span class="site-menu-title">Code Editor</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/profile.html">
+                            <span class="site-menu-title">Profile</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/profile-v2.html">
+                            <span class="site-menu-title">Profile V2</span>
+                            <div class="site-menu-label">
+                                <span class="badge badge-info badge-round">new</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/profile-v3.html">
+                            <span class="site-menu-title">Profile V3</span>
+                            <div class="site-menu-label">
+                                <span class="badge badge-info badge-round">new</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/site-map.html">
+                            <span class="site-menu-title">Sitemap</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="pages/project.html">
+                            <span class="site-menu-title">Project</span>
+                            <div class="site-menu-label">
+                                <span class="badge badge-info badge-round">new</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-bookmark" aria-hidden="true"></i>
+                    <span class="site-menu-title">Basic UI</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Panel</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item">
+                                <a href="uikit/panel-structure.html">
+                                    <span class="site-menu-title">Panel Structure</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="uikit/panel-actions.html">
+                                    <span class="site-menu-title">Panel Actions</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="uikit/panel-portlets.html">
+                                    <span class="site-menu-title">Panel Portlets</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/buttons.html">
+                            <span class="site-menu-title">Buttons</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/cards.html">
+                            <span class="site-menu-title">Cards</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/dropdowns.html">
+                            <span class="site-menu-title">Dropdowns</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/icons.html">
+                            <span class="site-menu-title">Icons</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/list.html">
+                            <span class="site-menu-title">List</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/tooltip-popover.html">
+                            <span class="site-menu-title">Tooltip &amp; Popover</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/modals.html">
+                            <span class="site-menu-title">Modals</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/tabs-accordions.html">
+                            <span class="site-menu-title">Tabs &amp; Accordions</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/images.html">
+                            <span class="site-menu-title">Images</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/badges.html">
+                            <span class="site-menu-title">Badges</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/progress-bars.html">
+                            <span class="site-menu-title">Progress Bars</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/carousel.html">
+                            <span class="site-menu-title">Carousel</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/typography.html">
+                            <span class="site-menu-title">Typography</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/colors.html">
+                            <span class="site-menu-title">Colors</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="uikit/utilities.html">
+                            <span class="site-menu-title">Utilties</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-hammer" aria-hidden="true"></i>
+                    <span class="site-menu-title">Advanced UI</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item hidden-sm-down site-tour-trigger">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Tour</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/animation.html">
+                            <span class="site-menu-title">Animation</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/highlight.html">
+                            <span class="site-menu-title">Highlight</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/lightbox.html">
+                            <span class="site-menu-title">Lightbox</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/scrollable.html">
+                            <span class="site-menu-title">Scrollable</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/rating.html">
+                            <span class="site-menu-title">Rating</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/context-menu.html">
+                            <span class="site-menu-title">Context Menu</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/alertify.html">
+                            <span class="site-menu-title">Alertify</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/masonry.html">
+                            <span class="site-menu-title">Masonry</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/treeview.html">
+                            <span class="site-menu-title">Treeview</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/toastr.html">
+                            <span class="site-menu-title">Toastr</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/maps-vector.html">
+                            <span class="site-menu-title">Vector Maps</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/maps-google.html">
+                            <span class="site-menu-title">Google Maps</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/sortable-nestable.html">
+                            <span class="site-menu-title">Sortable &amp; Nestable</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="advanced/bootbox-sweetalert.html">
+                            <span class="site-menu-title">Bootbox &amp; Sweetalert</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-plugin" aria-hidden="true"></i>
+                    <span class="site-menu-title">Structure</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a href="structure/alerts.html">
+                            <span class="site-menu-title">Alerts</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/ribbon.html">
+                            <span class="site-menu-title">Ribbon</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/pricing-tables.html">
+                            <span class="site-menu-title">Pricing Tables</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/overlay.html">
+                            <span class="site-menu-title">Overlay</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/cover.html">
+                            <span class="site-menu-title">Cover</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/timeline-simple.html">
+                            <span class="site-menu-title">Simple Timeline</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/timeline.html">
+                            <span class="site-menu-title">Timeline</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/step.html">
+                            <span class="site-menu-title">Step</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/comments.html">
+                            <span class="site-menu-title">Comments</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/media.html">
+                            <span class="site-menu-title">Media</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/chat.html">
+                            <span class="site-menu-title">Chat</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/testimonials.html">
+                            <span class="site-menu-title">Testimonials</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/nav.html">
+                            <span class="site-menu-title">Nav</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/navbars.html">
+                            <span class="site-menu-title">Navbars</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/blockquotes.html">
+                            <span class="site-menu-title">Blockquotes</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/pagination.html">
+                            <span class="site-menu-title">Pagination</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="structure/breadcrumbs.html">
+                            <span class="site-menu-title">Breadcrumbs</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-extension" aria-hidden="true"></i>
+                    <span class="site-menu-title">Widgets</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a href="widgets/statistics.html">
+                            <span class="site-menu-title">Statistics Widgets</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="widgets/data.html">
+                            <span class="site-menu-title">Data Widgets</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="widgets/blog.html">
+                            <span class="site-menu-title">Blog Widgets</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="widgets/chart.html">
+                            <span class="site-menu-title">Chart Widgets</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="widgets/social.html">
+                            <span class="site-menu-title">Social Widgets</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="widgets/weather.html">
+                            <span class="site-menu-title">Weather Widgets</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-library" aria-hidden="true"></i>
+                    <span class="site-menu-title">Forms</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a href="forms/general.html">
+                            <span class="site-menu-title">General Elements</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/material.html">
+                            <span class="site-menu-title">Material Elements</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/advanced.html">
+                            <span class="site-menu-title">Advanced Elements</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/layouts.html">
+                            <span class="site-menu-title">Form Layouts</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/wizard.html">
+                            <span class="site-menu-title">Form Wizard</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/validation.html">
+                            <span class="site-menu-title">Form Validation</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/masks.html">
+                            <span class="site-menu-title">Form Masks</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Editors</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item">
+                                <a href="forms/editor-summernote.html">
+                                    <span class="site-menu-title">Summernote</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="forms/editor-markdown.html">
+                                    <span class="site-menu-title">Markdown</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="forms/editor-ace.html">
+                                    <span class="site-menu-title">Ace Editor</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/image-cropping.html">
+                            <span class="site-menu-title">Image Cropping</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="forms/file-uploads.html">
+                            <span class="site-menu-title">File Uploads</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-table" aria-hidden="true"></i>
+                    <span class="site-menu-title">Tables</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a href="tables/basic.html">
+                            <span class="site-menu-title">Basic Tables</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/bootstrap.html">
+                            <span class="site-menu-title">Bootstrap Tables</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/floatthead.html">
+                            <span class="site-menu-title">floatThead</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/responsive.html">
+                            <span class="site-menu-title">Responsive Tables</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/editable.html">
+                            <span class="site-menu-title">Editable Tables</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/jsgrid.html">
+                            <span class="site-menu-title">jsGrid</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/footable.html">
+                            <span class="site-menu-title">FooTable</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/datatable.html">
+                            <span class="site-menu-title">DataTables</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/jqtabledit.html">
+                            <span class="site-menu-title">Jquery Tabledit</span>
+                            <div class="site-menu-label">
+                                <span class="badge badge badge-info badge-round">new</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="tables/table-dragger.html">
+                            <span class="site-menu-title">Table Dragger</span>
+                            <div class="site-menu-label">
+                                <span class="badge badge badge-warning badge-round">new</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>
+                    <span class="site-menu-title">Chart</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a href="charts/chartjs.html">
+                            <span class="site-menu-title">Chart.js</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/gauges.html">
+                            <span class="site-menu-title">Gauges</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/flot.html">
+                            <span class="site-menu-title">Flot</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/peity.html">
+                            <span class="site-menu-title">Peity</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/sparkline.html">
+                            <span class="site-menu-title">Sparkline</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/morris.html">
+                            <span class="site-menu-title">Morris</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/chartist.html">
+                            <span class="site-menu-title">Chartist.js</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/rickshaw.html">
+                            <span class="site-menu-title">Rickshaw</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/pie-progress.html">
+                            <span class="site-menu-title">Pie Progress</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="charts/c3.html">
+                            <span class="site-menu-title">C3</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+                <a href="javascript:void(0)">
+                    <i class="site-menu-icon wb-grid-4" aria-hidden="true"></i>
+                    <span class="site-menu-title">Apps</span>
+                    <span class="site-menu-arrow"></span>
+                </a>
+                <ul class="site-menu-sub">
+                    <li class="site-menu-item">
+                        <a href="apps/contacts/contacts.html">
+                            <span class="site-menu-title">Contacts</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/calendar/calendar.html">
+                            <span class="site-menu-title">Calendar</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/notebook/notebook.html">
+                            <span class="site-menu-title">Notebook</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/taskboard/taskboard.html">
+                            <span class="site-menu-title">Taskboard</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item has-sub">
+                        <a href="javascript:void(0)">
+                            <span class="site-menu-title">Documents</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item">
+                                <a href="apps/documents/articles.html">
+                                    <span class="site-menu-title">Articles</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="apps/documents/categories.html">
+                                    <span class="site-menu-title">Categories</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item">
+                                <a href="apps/documents/article.html">
+                                    <span class="site-menu-title">Article</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/forum/forum.html">
+                            <span class="site-menu-title">Forum</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/message/message.html">
+                            <span class="site-menu-title">Message</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/projects/projects.html">
+                            <span class="site-menu-title">Projects</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/mailbox/mailbox.html">
+                            <span class="site-menu-title">Mailbox</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/media/overview.html">
+                            <span class="site-menu-title">Media</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/work/work.html">
+                            <span class="site-menu-title">Work</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/location/location.html">
+                            <span class="site-menu-title">Location</span>
+                        </a>
+                    </li>
+                    <li class="site-menu-item">
+                        <a href="apps/travel/travel.html">
+                            <span class="site-menu-title">Travel</span>
+                            <div class="site-menu-label">
+                                <span class="badge badge-info badge-round">new</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="site-gridmenu">
+        <div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="apps/mailbox/mailbox.html">
+                            <i class="icon wb-envelope"></i>
+                            <span>Mailbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="apps/calendar/calendar.html">
+                            <i class="icon wb-calendar"></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="apps/contacts/contacts.html">
+                            <i class="icon wb-user"></i>
+                            <span>Contacts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="apps/media/overview.html">
+                            <i class="icon wb-camera"></i>
+                            <span>Media</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="apps/documents/categories.html">
+                            <i class="icon wb-order"></i>
+                            <span>Documents</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="apps/projects/projects.html">
+                            <i class="icon wb-image"></i>
+                            <span>Project</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="apps/forum/forum.html">
+                            <i class="icon wb-chat-group"></i>
+                            <span>Forum</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="icon wb-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Page -->
+    <div class="page">
+        <div class="page-content container-fluid">
+            <div class="row" data-by-row="true">
+                <div class="col-lg-12">
+                    <!-- Example Panel With Tool -->
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Kiểm tra tài khoản</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true" aria-hidden="true"></a>
+                                <a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row" data-by-row="true">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="" placeholder="account">
+                                            <span class="input-group-btn">
+                                            <button id="add_account" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                    <div class="select2-primary">
+                                        <select class="form-control select2-hidden-accessible" multiple="" data-plugin="select2" data-select2-id="17" tabindex="-1" aria-hidden="true">
+                                        <option value="1" selected="" data-select2-id="19">First tag</option>
+                                        <option value="2" data-select2-id="54">Second tag</option>
+                                        <option value="3" selected="" data-select2-id="20">Third tag</option>
+                                        <option value="4" data-select2-id="55">Fourth tag</option>
+                                        <option value="5" data-select2-id="56">Fifth tag</option>
+                                        </select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="18"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-selection__choice" title="First tag" data-select2-id="21"><span class="select2-selection__choice__remove" role="presentation">×</span>First tag</li><li class="select2-selection__choice" title="Third tag" data-select2-id="22"><span class="select2-selection__choice__remove" role="presentation">×</span>Third tag</li><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <button style="width:100%" id="update_account" class="btn btn-primary">Cập nhật</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Example Panel With Tool -->
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">ACCOUNTS</h3>
+                    <div class="panel-actions">
+                        <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true" aria-hidden="true"></a>
+                        <a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row" id="row_acc" data-by-row="true">
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row" data-by-row="true">
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWF_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+
+                                            <span task="FWF_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="food_tool_templates">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWW_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+
+                                            <span task="FWW_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="wood_tool_templates">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWG_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+
+                                            <span task="FWG_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="gold_tool_templates">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row" data-by-row="true">
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWF_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+
+                                            <span task="FWF_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="food_member_templates">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWW_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+
+                                            <span task="FWW_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="wood_member_templates">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWG_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+                                            <span task="FWG_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="gold_member_templates">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row" data-by-row="true">
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWF_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+
+                                            <span task="FWF_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="food_crop_templates">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWW_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+
+                                            <span task="FWW_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="wood_crop_templates">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-5">
+                            <div class="card profile_card">
+                                <div class="card-header">
+                                    <div class="ntf-header media align-items-center mb-3">
+                                        <div class="media-body">
+                                            <span task="FWG_price" class="badge darken-3 md">0
+                                            </span>
+                                            <span class="badge darken-3 md">￦
+                                            </span>
+                                            <span task="FWG_price_percent" class="badge bg-danger">0%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="gold_crop_templates">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page -->
+
+
+    <!-- Footer -->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- End Page -->
+
+
+    <!-- Footer -->

@@ -8,11 +8,11 @@ class Shop extends CI_Controller {
         $this->load->model('blog_model');
     }
     public function index(){
-        $this->gate_model->user_gate()();
+        // $this->gate_model->user_gate();
         // $top5news = $this->blog_model->get_5news_blog();
         $data['top5news'] = "ok";
         $this->load->view('layout/head');
-        $this->load->view('layout/pre');
+        // $this->load->view('layout/pre');
         $this->load->view('trangchu', $data);
         $this->load->view('layout/footer');
     }

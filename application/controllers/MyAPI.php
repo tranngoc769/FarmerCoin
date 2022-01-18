@@ -8,6 +8,7 @@ class MyAPI extends CI_Controller
         $this->ntf_url = "https://wax.api.atomicassets.io/atomicmarket";
         $this->fprice_url = "https://wax.alcor.exchange/api/markets";
         $this->usd_vnd_url = 'https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search';
+        $this->wax_price_url = 'https://api.huobi.pro/market/detail?symbol=waxpusdt';
     }
 
     public function get_account()
@@ -99,7 +100,11 @@ class MyAPI extends CI_Controller
             $tmp = $templates[$i];
             $template_id = $tmp->id;
             $curl = curl_init();
+            $insert_med = [298612,298593,318607,318606,298596,298595,298592]; 
             $c_url = $this->ntf_url . "/v1/sales/templates?symbol=WAX&template_id=" . $template_id . "&page=1&limit=1&sort=price";
+            if (in_array($template_id,$insert_med)){
+                $c_url = "https://wax.api.atomicassets.io/atomicmarket/v1/prices/templates?template_id=" . $template_id . "&page=1&limit=1&order=asc";
+               }
             curl_setopt_array($curl, array(
                 CURLOPT_URL => $c_url,
                 CURLOPT_RETURNTRANSFER => true,
@@ -200,6 +205,53 @@ class MyAPI extends CI_Controller
             }
         }
         $response_data["USD"] = array("change24"=>0,"last_price"=>$price*1,"volume24"=>0);
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $this->wax_price_url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: __cflb=04dToT3YbvfoHPc3Qwr6tomF4pviam7v3kPQgTbAbM'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $data = json_decode($response);
+        $close = $data->tick->close;
+        $response_data["WAX"] = array("change24"=>0,"last_price"=>$close*1,"volume24"=>0);
+        curl_close($curl);
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL =>  "https://wax.api.atomicassets.io/atomicmarket/v1/prices/templates?template_id=260676&page=1&limit=1&order=asc",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: __cflb=04dToT3YbvfoHPc3Qwr6tomF4pviam7v3kPQgTbAbM'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $data = json_decode($response);
+        curl_close($curl);
+        $farm_coin = 0;
+        try {
+            $prec = $data->data[0]->token_precision;
+            $suggested_median = $data->data[0]->suggested_median;
+            $farm_coin = $suggested_median/(100000000);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        $response_data["FARM"] = array("change24"=>0,"last_price"=>$farm_coin*1,"volume24"=>0);
         echo json_encode($response_data, JSON_UNESCAPED_UNICODE);
     }
     public function api_template_with_dm(){
