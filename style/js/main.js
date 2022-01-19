@@ -1,10 +1,15 @@
+const interval_price = 60 * 1000;
+const interval_accs = 60 * 1000;
+const interval_tools = 300 * 1000;
+var ListAcc = []
 var MomCow = 0;
 var MinBaley = 0;
 var MinCaft = 0;
 var MinCorn = 0;
-var AccInfos = {
-
-}
+// Inteval;
+var IntervalPrice = null
+var IntervalAcc = null
+var IntervalTools = null
 
 function get_min_buy(arr) {
     let min = Infinity;
@@ -26,10 +31,8 @@ let BuySettingPrice = 3;
 var fwf = 0;
 var fww = 0;
 var fwg = 0;
-
 //console.log("mina")
 var TEMPLATES = null;
-const interval_price = 60 * 1000;
 let get_currency = (element) => {
     try {
         return $(`#${element}_price_value`).val() * 1.0;
@@ -221,7 +224,6 @@ let create_account_blocks = function(name) {
                 acc_balance.balances.forEach(element => {
                     if (element.currency == "WAX") {
                         let balance = (element.amount * 1.0).toFixed(2);
-                        console.log(balance)
                         $(`i[name='${name}_balance']`).text(balance)
                     }
                 });
@@ -321,7 +323,6 @@ let create_account_blocks = function(name) {
                     `;
                     $(`div[id='${name}_acc_mining']`).append(html)
                 });
-                console.log(current_tools)
                 get_rows("mbs", name, 2).done((rows_data) => {
                     rows_data.rows.forEach(element => {
                         let time_now = Math.round(new Date().getTime() / 1000);
@@ -782,13 +783,103 @@ let create_tools_block = function() {
         }
     });
 }
+
+function removeItemOnce(arr, value) {
+    var index = arr.indexOf(value);
+    if (index > -1) {
+        arr.splice(index, 1);
+    }
+    return arr;
+}
+
+function CreateListAcc() {
+    ListAcc.forEach(acc => {
+        // acc = "qsqg2.wam"
+        create_account_blocks(acc)
+    });
+}
 $(document).ready(function() {
+    $(document).on('click', "#add_account", function() {
+
+        let acc = $("#input_acc").val();
+        if (acc != "" && !ListAcc.includes(acc)) {
+            if ($("span[target='account']").length == 0) {
+                $("#list_acc").empty()
+            }
+            $("#list_acc").append(`<span target="account" class="badge badge-outline badge-success">${acc}</span>`)
+            ListAcc.push(acc)
+        }
+    })
+    $(document).on('click', "#save_form", function() {
+
+        var form = new FormData();
+        let arr = $("#input_form input,select");
+        arr.forEach(element => {
+            let name = element.getAttribute("name")
+            let value = element.value;
+            if (value == "") {
+                alert("Chưa điền : " + name);
+                return;
+            }
+            form.append(name, value);
+        });
+
+        var settings = {
+            "url": "/index.php/myapi/save_form",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Cookie": "ci_session=tgdf9n13g6fheo87ktsj8mg5aj1kr6de"
+            },
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+            "data": form
+        };
+        $.ajax(settings).done(function(response) {
+            console.log(response);
+        }).fail(function(response) {
+            console.log(response);
+            alert("Không thành công")
+        });
+    });
+    $(document).on('click', "span[target='account']", function() {
+        let span = $(this);
+        let acc = span.text();
+        if (acc != undefined || acc != "") {
+            ListAcc = removeItemOnce(ListAcc, acc)
+            span.remove();
+            if ($("span[target='account']").length == 0) {
+                $("#list_acc").append(`<span>Danh sách</span>`)
+            }
+        }
+    })
+
+    $(document).on('click', "#update_interval_acc", function() {
+        let val = $("#interval_acc").val();
+        if (val == undefined || val == "") {
+            return;
+        }
+        if (val > 60) {
+            interval_accs = val * 1000;
+            clearInterval(IntervalAcc)
+            IntervalAcc = setInterval(CreateListAcc, interval_accs);
+        }
+    });
+    $(document).on('click', "#update_account", function() {
+        if (TEMPLATES == null) {
+            alert("Wait some seconds");
+            return;
+        }
+        CreateListAcc();
+        IntervalAcc = setInterval(CreateListAcc, interval_accs);
+    })
     get_template_config().done(function(response) {
         TEMPLATES = response;
-        // //console.log(TEMPLATES)
-        let acc = "qsqg2.wam"
-        create_account_blocks(acc)
+        if (TEMPLATES != null) {
+            // create_tools_block();
+            // IntervalTools = setInterval(create_tools_block, interval_tools);
+        }
     })
-    create_tools_block();
     return;
 });

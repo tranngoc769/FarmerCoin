@@ -57,6 +57,16 @@
     <![endif]-->
 
   <!-- Scripts -->
-  
+  <style>
+    #manager .form-group{
+      margin-bottom: 2px;
+    }
+    #input_form .form-group{
+      margin-bottom: 2px;
+    }
+    #manager span{
+      border:1px solid #8d7b7b54
+    }
+    </style>
   <script src="/style/vendor/breakpoints/breakpoints.min599c.js?v4.0.2"></script>
 </head>

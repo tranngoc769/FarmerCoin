@@ -1145,24 +1145,18 @@
                                 <div class="col-4">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="" placeholder="account">
+                                            <input value="qsqg2.wam" id="input_acc" type="text" class="form-control" name="" placeholder="account">
                                             <span class="input-group-btn">
-                                            <button id="add_account" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
+                                                <button id="add_account" class="btn btn-primary"><i class="icon wb-search" aria-hidden="true"></i></button>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                    <div class="select2-primary">
-                                        <select class="form-control select2-hidden-accessible" multiple="" data-plugin="select2" data-select2-id="17" tabindex="-1" aria-hidden="true">
-                                        <option value="1" selected="" data-select2-id="19">First tag</option>
-                                        <option value="2" data-select2-id="54">Second tag</option>
-                                        <option value="3" selected="" data-select2-id="20">Third tag</option>
-                                        <option value="4" data-select2-id="55">Fourth tag</option>
-                                        <option value="5" data-select2-id="56">Fifth tag</option>
-                                        </select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="18"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-selection__choice" title="First tag" data-select2-id="21"><span class="select2-selection__choice__remove" role="presentation">×</span>First tag</li><li class="select2-selection__choice" title="Third tag" data-select2-id="22"><span class="select2-selection__choice__remove" role="presentation">×</span>Third tag</li><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                    </div>
+                                        <button id="list_acc" style="text-align:left; width:100%; background:transparent" class="btn btn-primary">
+                                            <span>Danh sách</span>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -1174,9 +1168,149 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row" data-by-row="true">
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button id="update_interval_acc" type="button" class="btn btn-danger"><i class="icon wb-link" aria-hidden="true"></i> Cập nhật Acc</button>
+                                            </span>
+                                            <input id="interval_acc" type="number" class="form-control" placeholder="60s">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- End Example Panel With Tool -->
+                </div>
+            </div>
+            <div class="row" data-by-row="true">
+                <div class="col-lg-6">
+                    <!-- Example Panel With Tool -->
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Quản lý</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true" aria-hidden="true"></a>
+                                <a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row" data-by-row="true">
+                                <div class="col-12" id="manager">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">Báo cáo</span>
+                                            <span style="width: 40%;" class="input-group-addon">Số tiền</span>
+                                            <span style="width: 40%;" class="input-group-addon">Chiếm</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">Sẵn sàng rút</span>
+                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">Đầu tư</span>
+                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">An toàn</span>
+                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">Lợi nhuận</span>
+                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">Rút vốn</span>
+                                            <input type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Example Panel With Tool -->
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Nhập liệu</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action icon wb-minus" data-toggle="panel-collapse" aria-expanded="true" aria-hidden="true"></a>
+                                <a class="panel-action icon wb-expand" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row" data-by-row="true" >
+                                <div class="col-12">
+                                    <div class="form" id="input_form">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span style="width: 30%;" class="input-group-addon">Tài khoản</span>
+                                                <input value="11"  name="taikhoan" type="text" class="form-control" placeholder="Tài khoản">
+                                                <select name="hanhdong" class="form-control">
+                                                    <option value="nap" selected>Nạp</option>
+                                                    <option value="rut">Rút</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span style="width: 30%;" class="input-group-addon">WAX</span>
+                                                <input name="wax" value="11"  type="number" class="form-control" placeholder="WAX">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span style="width: 30%;" class="input-group-addon">Giá WAX</span>
+                                                <input name="wax_price" value="11"  type="number" class="form-control" placeholder="Giá WAX">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span style="width: 30%;" class="input-group-addon">Giá USDT</span>
+                                                <input name="usd_price" value="11"  type="number" class="form-control" placeholder="Giá USDT">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span style="width: 30%;" class="input-group-addon">USD</span>
+                                                <input  value="11" name="usd" type="number" class="form-control" placeholder="USD">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span style="width: 30%;" class="input-group-addon">VND</span>
+                                                <input name="vnd" type="number" value="11" class="form-control" placeholder="VND">
+                                                <span  style="width: 20%;" class="input-group-btn">
+                                                    <span id="save_form" style="width: 100%;"  class="btn btn-success btn-file">
+                                                        <i class="icon wb-upload" aria-hidden="true"></i>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="panel">

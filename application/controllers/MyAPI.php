@@ -5,6 +5,7 @@ class MyAPI extends CI_Controller
     {
         parent::__construct();
         $this->load->model('template_model');
+        $this->load->model('history_model');
         $this->ntf_url = "https://wax.api.atomicassets.io/atomicmarket";
         $this->fprice_url = "https://wax.alcor.exchange/api/markets";
         $this->usd_vnd_url = 'https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search';
@@ -265,5 +266,8 @@ class MyAPI extends CI_Controller
             $response_data[$id] = $item;
         }
         echo json_encode($response_data, JSON_UNESCAPED_UNICODE);
+    }
+    public function save_form(){
+        echo("ok");
     }
 }
