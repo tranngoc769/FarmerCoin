@@ -58,6 +58,7 @@
   <script src="/style/js/Plugin/raty.min599c.js?v4.0.2"></script>
    <script src="/style/assets/examples/js/dashboard/v1.min599c.js?v4.0.2"></script>
    <script src="/style/assets/examples/js/uikit/panel-structure.min599c.js?v4.0.2"></script>
+   <script src="/style/js/tata.js"></script>
    <script src="/style/js/main.js"></script>
 </body>
 

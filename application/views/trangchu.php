@@ -4,7 +4,7 @@
     <![endif]-->
 
     <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
-
+        <input id="username" value="<?=$username?>" hidden>
         <div class="navbar-header">
             <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left hided" data-toggle="menubar">
                 <span class="sr-only">Toggle navigation</span>
@@ -1070,63 +1070,6 @@
             </li>
         </ul>
     </div>
-    <div class="site-gridmenu">
-        <div>
-            <div>
-                <ul>
-                    <li>
-                        <a href="apps/mailbox/mailbox.html">
-                            <i class="icon wb-envelope"></i>
-                            <span>Mailbox</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps/calendar/calendar.html">
-                            <i class="icon wb-calendar"></i>
-                            <span>Calendar</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps/contacts/contacts.html">
-                            <i class="icon wb-user"></i>
-                            <span>Contacts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps/media/overview.html">
-                            <i class="icon wb-camera"></i>
-                            <span>Media</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps/documents/categories.html">
-                            <i class="icon wb-order"></i>
-                            <span>Documents</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps/projects/projects.html">
-                            <i class="icon wb-image"></i>
-                            <span>Project</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps/forum/forum.html">
-                            <i class="icon wb-chat-group"></i>
-                            <span>Forum</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="index.html">
-                            <i class="icon wb-dashboard"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Page -->
     <div class="page">
         <div class="page-content container-fluid">
             <div class="row" data-by-row="true">
@@ -1180,6 +1123,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div class="col-4">
+                                    <div class="form-group">
+                                        
+                                        <div class="input-group">
+                                            <div class="radio-custom radio-primary">
+                                                <input tag="wax" type="radio" checked name="usdChecked">
+                                                <label for="inputChecked">Dùng Wax</label>
+                                            </div>
+                                            
+                                            <div class="radio-custom radio-primary">
+                                                <input tag="usd"  type="radio" name="usdChecked">
+                                                <label for="inputChecked">Dùng USDT</label>
+                                            </div>
+                                            
+                                            <div class="radio-custom radio-primary">
+                                                <input tag="vnd" type="radio" name="usdChecked">
+                                                <label for="inputChecked">Dùng VND</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1210,35 +1175,42 @@
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span style="width: 20%;" class="input-group-addon">Sẵn sàng rút</span>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input id="report_withdraw" type="text" class="form-control" placeholder="">
                                             <input type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span style="width: 20%;" class="input-group-addon">Đầu tư</span>
-                                            <input type="text" class="form-control" placeholder="">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span style="width: 20%;" class="input-group-addon">An toàn</span>
-                                            <input type="text" class="form-control" placeholder="">
-                                            <input type="text" class="form-control" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <span style="width: 20%;" class="input-group-addon">Lợi nhuận</span>
-                                            <input type="text" class="form-control" placeholder="">
+                                            <input id="report_nap" type="text" class="form-control" placeholder="">
                                             <input type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
                                             <span style="width: 20%;" class="input-group-addon">Rút vốn</span>
+                                            <input id="report_rut" type="text" class="form-control" placeholder="">
                                             <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">An toàn</span>
+                                            <input id="report_staked" type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">Lợi nhuận</span>
+                                            <input id="report_profits" type="text" class="form-control" placeholder="">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span style="width: 20%;" class="input-group-addon">Rút vốn</span>
+                                            <input id="report_all" type="text" class="form-control" placeholder="">
                                             <input type="text" class="form-control" placeholder="">
                                         </div>
                                     </div>
@@ -1264,7 +1236,7 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span style="width: 30%;" class="input-group-addon">Tài khoản</span>
-                                                <input value="11"  name="taikhoan" type="text" class="form-control" placeholder="Tài khoản">
+                                                <input value="0"  name="taikhoan" type="text" class="form-control" placeholder="Tài khoản">
                                                 <select name="hanhdong" class="form-control">
                                                     <option value="nap" selected>Nạp</option>
                                                     <option value="rut">Rút</option>
@@ -1274,31 +1246,31 @@
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span style="width: 30%;" class="input-group-addon">WAX</span>
-                                                <input name="wax" value="11"  type="number" class="form-control" placeholder="WAX">
+                                                <input name="wax" value="0"  type="number" class="form-control" placeholder="WAX">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span style="width: 30%;" class="input-group-addon">Giá WAX</span>
-                                                <input name="wax_price" value="11"  type="number" class="form-control" placeholder="Giá WAX">
+                                                <input name="wax_price" value="0"  type="number" class="form-control" placeholder="Giá WAX">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span style="width: 30%;" class="input-group-addon">Giá USDT</span>
-                                                <input name="usd_price" value="11"  type="number" class="form-control" placeholder="Giá USDT">
+                                                <input name="usd_price" value="0"  type="number" class="form-control" placeholder="Giá USDT">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span style="width: 30%;" class="input-group-addon">USD</span>
-                                                <input  value="11" name="usd" type="number" class="form-control" placeholder="USD">
+                                                <input readonly value="0" name="usd" type="number" class="form-control" placeholder="USD">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <span style="width: 30%;" class="input-group-addon">VND</span>
-                                                <input name="vnd" type="number" value="11" class="form-control" placeholder="VND">
+                                                <input readonly name="vnd" type="number" value="0" class="form-control" placeholder="VND">
                                                 <span  style="width: 20%;" class="input-group-btn">
                                                     <span id="save_form" style="width: 100%;"  class="btn btn-success btn-file">
                                                         <i class="icon wb-upload" aria-hidden="true"></i>
@@ -1345,7 +1317,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="food_tool_templates">
+                                <div class="card-body" style="font-size: 12px;"  id="food_tool_templates">
                                 </div>
                             </div>
                         </div>
@@ -1365,7 +1337,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="wood_tool_templates">
+                                <div class="card-body" style="font-size: 12px;"  id="wood_tool_templates">
                                 </div>
                             </div>
                         </div>
@@ -1385,7 +1357,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="gold_tool_templates">
+                                <div class="card-body" style="font-size: 12px;"  id="gold_tool_templates">
                                 </div>
                             </div>
                         </div>
@@ -1410,7 +1382,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="food_member_templates">
+                                <div class="card-body" style="font-size: 12px;"  id="food_member_templates">
                                 </div>
                             </div>
                         </div>
@@ -1429,7 +1401,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="wood_member_templates">
+                                <div class="card-body" style="font-size: 12px;"  id="wood_member_templates">
                                 </div>
                             </div>
                         </div>
@@ -1447,7 +1419,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="gold_member_templates">
+                                <div class="card-body" style="font-size: 12px;"  id="gold_member_templates">
                                 </div>
                             </div>
                         </div>
@@ -1472,7 +1444,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="food_crop_templates">
+                                <div class="card-body" style="font-size: 12px;" id="food_crop_templates">
                                 </div>
                             </div>
                         </div>
@@ -1491,7 +1463,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="wood_crop_templates">
+                                <div class="card-body"  style="font-size: 12px;" id="wood_crop_templates">
                                 </div>
                             </div>
                         </div>
@@ -1509,7 +1481,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-body" id="gold_crop_templates">
+                                <div class="card-body" style="font-size: 12px;"  id="gold_crop_templates">
                                 </div>
                             </div>
                         </div>

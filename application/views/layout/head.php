@@ -9,7 +9,7 @@
   <meta name="description" content="bootstrap admin template">
   <meta name="author" content="">
 
-  <title>Dashboard | Remark Admin Template</title>
+  <title><?=$title?></title>
 
   <link rel="apple-touch-icon" href="/style/assets/images/apple-touch-icon.png">
   <link rel="shortcut icon" href="/style/assets/images/favicon.ico">
@@ -67,6 +67,24 @@
     #manager span{
       border:1px solid #8d7b7b54
     }
+    .media{
+      border-bottom: 1px solid #cba6a6
+    }
+    .media-body .row {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .new-card{
+      border:1px solid #b7a5a5
+    }
+    .media-body .row .col-4 {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .media-body span{
+      font-weight: bold;
+    }
     </style>
+  <link rel="stylesheet" href="/style/assets/examples/css/forms/advanced.min599c.css?v4.0.2">
   <script src="/style/vendor/breakpoints/breakpoints.min599c.js?v4.0.2"></script>
 </head>

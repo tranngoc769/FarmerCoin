@@ -268,6 +268,43 @@ class MyAPI extends CI_Controller
         echo json_encode($response_data, JSON_UNESCAPED_UNICODE);
     }
     public function save_form(){
-        echo("ok");
+        $data = $_POST;
+        if (count($data) != 8){
+            $response = array("code" => 403, "msg" => "data is invalid");
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            return;
+        }
+        $status = $this->history_model->save_form($data);
+        if (!$status){
+            $response = array("code" => 403, "msg" => "cannot save");
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            return;
+        }
+        $response = array("code" => 200, "msg" => "success");
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        return;
+    }
+    
+    public function get_nap(){
+        $total = 0;
+        $status = $this->history_model->get_hanhdong("nap");
+        for ($i=0; $i < count($status); $i++) { 
+            # code...
+            $total += $status[$i]->vnd;
+        }
+        $response = array("code" => 200, "msg" => $total);
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        return;
+    }
+    public function get_rut(){
+        $total = 0;
+        $status = $this->history_model->get_hanhdong("rut");
+        for ($i=0; $i < count($status); $i++) { 
+            # code...
+            $total += $status[$i]->vnd;
+        }
+        $response = array("code" => 200, "msg" => $total);
+        echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        return;
     }
 }

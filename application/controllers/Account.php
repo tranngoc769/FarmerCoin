@@ -6,14 +6,12 @@ class Account extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('account_model');
+        $this->load->model("user_model");
     }
     public function index()
     {
         $data['title'] = "Đăng nhập";
-        $this->load->view('layout/admin_head.php', $data);
-        $this->load->view('admin/login');
-        $this->load->view('layout/admin_footer.php');
+        $this->load->view('layout/login');
     }
     public function login()
     {
@@ -23,45 +21,22 @@ class Account extends CI_Controller
             "username" => $username,
             "password" => $password,
         ];
-        $result = $this->account_model->login($data);
+        $result = $this->user_model->login($data);
         if ($result){
-            return redirect('/admin/index');
+            $response = array("code" => 200, "msg" => "success");
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            return;
         }
         else{
-            return redirect('/account/index');
+            $response = array("code" => 400, "msg" => "failed");
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+            return;
         }
-    }
-    public function tuvan()
-    {
-        $hoten = $_POST["hoten"];
-        $email =  $_POST["email"];
-        $sdt =  $_POST["sdt"];
-        $in = $this->account_model->customer_info(array("name" => $hoten, "email" => $email, "phone" => $sdt, "dateadd" => date("Y-m-d h:i:s")));
-        if ($in) {
-            $array = array(
-                "code" => 200,
-                "msg" => "Success"
-            );
-            header('Access-Control-Allow-Origin: *');
-            header('Content-Type: application/json');
-            echo json_encode($array);
-        }
-        else{
-            $array = array(
-                "code" => 404,
-                "msg" => "Erro"
-            );
-            header('Access-Control-Allow-Origin: *');
-            header('Content-Type: application/json');
-            echo json_encode($array);
-        }
-        // $result = $this->account_model->login($data);
-        // return redirect('/admin/dichvu');
     }
     public function logout()
     {
         $array_items = array('username', 'usertype');
         $this->session->unset_userdata($array_items);
-        redirect('shop');
+        redirect('monitor');
     }
 }

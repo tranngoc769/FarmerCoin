@@ -8,7 +8,7 @@ class Gate_model extends CI_Model {
             $message .= "<strong>Warning!</strong> You are not allowed to visit this link!";
             $message .= "</div>";
             $this->session->set_flashdata("success", $message );
-            redirect('shop');
+            redirect('monitor');
         }
     }
 	public function admin_gate() {
@@ -29,7 +29,7 @@ class Gate_model extends CI_Model {
 			$message .= "<strong>Warning!</strong> You are not the dev!";
 			$message .= "</div>";
 			$this->session->set_flashdata("success", $message );
-			redirect('shop');
+			redirect('monitor');
 		}
     }
     
@@ -52,7 +52,7 @@ class Gate_model extends CI_Model {
         $message .= "<strong>Warning!</strong> You are not the dev or admin!";
         $message .= "</div>";
         $this->session->set_flashdata("success", $message );
-        redirect('shop');
+        redirect('monitor');
       }
     }
     
@@ -63,7 +63,7 @@ class Gate_model extends CI_Model {
             $message .= "<strong>Warning!</strong> You are not a registered user!";
             $message .= "</div>";
             $this->session->set_flashdata("success", $message );
-            redirect('shop');
+            redirect('account');
         }
     }
 
